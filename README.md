@@ -6,12 +6,12 @@ The codes were implemented in the R Statistical software v3.1.2 using lavaan pac
 
 Download the code file. 
 
-Add the codes to the directory  containing your data files in the R Statistical software.
+Add the codes to the directory containing your data files in the R Statistical software.
 
-The anonymized data used in the manuscript figures can be obtained from the corresponding author upon a request from a qualified academic investigator to replicate the results presented in the article. 
+The anonymized data used in the manuscript figures can be obtained from the corresponding author upon request.
 
 # Dependencies 
 
 R Statistical software
 
-Library package: lavaan
+Library: lavaan
