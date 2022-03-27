@@ -1,0 +1,86 @@
+
+install.packages("lavaan")
+library(lavaan)
+
+######################################################################################################
+
+# SEM model Figure 5
+
+Model_1 <- 'HDCAI ~ a*AMYLOID + b*TAU
+MMSE ~ c*HDCAI + d*AMYLOID + e*TAU + f*ATROPHY + Age + Education + Sex
+ATROPHY ~ g*HDCAI + h*AMYLOID + i*TAU + Age + Education + Sex
+TAU ~ AMYLOID
+
+AMY_HDCA_Cg :=a*c
+TAU_HDCA_Cg :=b*c
+AMY_HDCA_AT :=a*g
+TAU_HDCA_AT :=b*g
+AMY_AT_Cg :=h*f
+TAU_AT_Cg :=i*f
+AMY_HDCA_AT_Cg:=a*g*f
+TAU_HDCA_AT_Cg:=b*g*f
+total :=a*c+b*c+a*g+b*g+h*f+i*f+a*g*f+b*g*f'
+
+
+fit_1 <- sem(Model_1, verbose= T, fixed.x=T, test = "bootstrap", se = "bootstrap", bootstrap = 10000)
+summary(fit_1, standardized=T,fit.measures=T, rsq=T)
+
+######################################################################################################
+
+# SEM model Figure S4a
+
+Model_2 <- 'ATROPHY ~ a*AMYLOID + b*TAU
+MMSE ~ c*ATROPHY + d*AMYLOID + e*TAU + f*HDAC + Age + Education + Sex
+HDAC ~ g*ATROPHY + h*AMYLOID + i*TAU + Age + Education + Sex
+TAU ~ AMYLOID
+
+AMY_AT_Cg :=a*c
+TAU_AT_Cg :=b*c
+AMY_AT_AT :=a*g
+TAU_AT_HDAC :=b*g
+AMY_HDAC_Cg :=h*f
+TAU_HDAC_Cg :=i*f
+AMY_AT_HDAC_Cg:=a*g*f
+TAU_AT_HDAC_Cg:=b*g*f
+total :=a*c+b*c+a*g+b*g+h*f+i*f+a*g*f+b*g*f'
+
+
+fit_2 <- sem(Model_2, verbose= T, fixed.x=T, test = "bootstrap", se = "bootstrap", bootstrap = 10000)
+summary(fit_2, standardized=T,fit.measures=T, rsq=T)
+
+######################################################################################################
+
+# SEM model Figure S4b
+
+Model_3 <- ' AMYLOID ~ HDCA
+TAU ~ AMYLOID + HDCA
+ATROPHY ~  TAU + Age + Education + Sex
+Cognition ~ TAU + ATROPHY + Age + Education + Sex'
+
+fit_3 <- sem(Model_3, verbose= T, fixed.x=T, test = "bootstrap", se = "bootstrap", bootstrap = 10000)
+summary(fit_3, standardized=T,fit.measures=T, rsq=T)
+
+######################################################################################################
+
+# SEM model Figure S4c
+
+Model_4 <- ' HDCA ~ AMYLOID
+TAU ~ AMYLOID + HDCA
+ATROPHY ~  TAU + Age + Education + Sex
+Cognition ~ TAU + ATROPHY + Age + Education + Sex'
+
+fit_4 <- sem(Model_4, verbose= T, fixed.x=T, test = "bootstrap", se = "bootstrap", bootstrap = 10000)
+summary(fit_4, standardized=T,fit.measures=T, rsq=T)
+
+######################################################################################################
+
+# SEM model Figure S5
+
+Model_5 <- 'TAU ~ AMYLOID
+ATROPHY ~   TAU + Age + Education + Sex
+Cognition ~ TAU + ATROPHY + Age + Education + Sex'
+
+fit_5 <- sem(Model_5, verbose= T, fixed.x=T, test = "bootstrap", se = "bootstrap", bootstrap = 10000)
+summary(fit_5, standardized=T,fit.measures=T, rsq=T)
+
+######################################################################################################
