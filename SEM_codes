@@ -27,7 +27,7 @@ summary(fit_1, standardized=T,fit.measures=T, rsq=T)
 
 ######################################################################################################
 
-# SEM model Figure S4a
+# SEM model Supplementary Figure 4a 
 
 Model_2 <- 'ATROPHY ~ a*AMYLOID + b*TAU
 MMSE ~ c*ATROPHY + d*AMYLOID + e*TAU + f*HDAC + Age + Education + Sex
@@ -50,7 +50,7 @@ summary(fit_2, standardized=T,fit.measures=T, rsq=T)
 
 ######################################################################################################
 
-# SEM model Figure S4b
+# SEM model Supplementary Figure 4b
 
 Model_3 <- ' AMYLOID ~ HDCA
 TAU ~ AMYLOID + HDCA
@@ -62,7 +62,7 @@ summary(fit_3, standardized=T,fit.measures=T, rsq=T)
 
 ######################################################################################################
 
-# SEM model Figure S4c
+# SEM model Supplementary Figure 4c 
 
 Model_4 <- ' HDCA ~ AMYLOID
 TAU ~ AMYLOID + HDCA
@@ -74,7 +74,7 @@ summary(fit_4, standardized=T,fit.measures=T, rsq=T)
 
 ######################################################################################################
 
-# SEM model Figure S5
+# SEM model Supplementary Figure 5
 
 Model_5 <- 'TAU ~ AMYLOID
 ATROPHY ~   TAU + Age + Education + Sex
