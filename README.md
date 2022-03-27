@@ -1,6 +1,6 @@
 # 2022-Nat_Comm_Pascoal_etal
 
-The codes were implemented in the R Statistical software v3.1.2 using lavaan package 
+The structural equation model codes were implemented in the R Statistical software v3.1.2 using lavaan package.
 
 # Installing and executing the code
 
