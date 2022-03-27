@@ -8,7 +8,7 @@ Download the code file.
 
 Add the codes to the directory containing your data files in the R Statistical software.
 
-The anonymized data used in the manuscript figures can be obtained from the corresponding author upon request.
+The data used in the manuscript figures can be obtained from the corresponding author upon request.
 
 # Dependencies 
 
